@@ -18,6 +18,7 @@
 package com.mcthepond.champs.bukkit.core.utils;
 
 import com.mcthepond.champs.library.CLocation;
+import com.mcthepond.champs.library.server.ServerBridge;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 
@@ -26,9 +27,8 @@ import org.bukkit.Location;
  */
 public class LocationUtil {
 
-    // TODO
     public static CLocation toChampionsLoc(Location location) {
-        //CLocation loc = new CLocation(ServerHandler.getServerBridge().getCWorld(location.getWorld().getName()), location.getX(), location.getY(), location.getZ(), location.getYaw(), location.getPitch());
+        CLocation loc = new CLocation(ServerBridge.getInstance().getCWorld(location.getWorld().getName()), location.getX(), location.getY(), location.getZ(), location.getYaw(), location.getPitch());
         return null;
     }
 

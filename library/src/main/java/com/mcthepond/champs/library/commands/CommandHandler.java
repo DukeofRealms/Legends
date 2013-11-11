@@ -18,6 +18,7 @@
 package com.mcthepond.champs.library.commands;
 
 import com.mcthepond.champs.library.cplayer.CPlayer;
+import com.mcthepond.champs.library.util.ChatColor;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -61,6 +62,9 @@ public class CommandHandler {
 
     // TODO allow for console commands and base commands.
     public static CommandResult exec(CPlayer cPlayer, String commandName, String[] arg) {
+        if (arg.length == 0) {
+            cPlayer.sendMessage(ChatColor.RED + "Not enough arguments! /champs help");
+        }
         String firstArg = arg[0].toLowerCase();
         if (firstArg.equalsIgnoreCase("help")) {
             help(cPlayer);

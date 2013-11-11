@@ -19,29 +19,31 @@ package com.mcthepond.champs.bukkit.core;
 
 import java.util.logging.Logger;
 
+import com.mcthepond.champs.library.server.ServerBridge;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.mcthepond.champs.bukkit.core.utils.DependencyHandler;
-import com.mcthepond.champs.library.server.ServerHandler;
 
 /**
  * @author B2OJustin
  */
-public class ChampionsCore extends JavaPlugin {
-    private static Logger logger = Logger.getLogger(ChampionsCore.class.getName());
-    private static ChampionsCore instance;
+public class ChampsCore extends JavaPlugin {
+    private static Logger logger = Logger.getLogger(ChampsCore.class.getName());
+    private static ChampsCore instance;
 
-    public static ChampionsCore getInstance() {
+    public static ChampsCore getInstance() {
         return instance;
     }
 
 	@Override
 	public void onEnable() {
-        ChampionsCore.instance = this;
+        ChampsCore.instance = this;
 
         DependencyHandler.resolve();
 
-        ServerHandler.setServerBridge(new BukkitChampionsServer(this));
+        ServerBridge.setInstance(new BukkitChampsServer(this));
+
+        getCommand("champs").setExecutor(new BukkitCommandHandler());
 
         logger.info("Champions successfully enabled!");
 	}

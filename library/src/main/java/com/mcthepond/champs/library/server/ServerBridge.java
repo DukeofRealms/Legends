@@ -17,10 +17,12 @@
 
 package com.mcthepond.champs.library.server;
 
+import com.mcthepond.champs.library.CWorld;
 import com.mcthepond.champs.library.Configuration;
 import com.mcthepond.champs.library.armor.ArmorCategoryHandler;
 import com.mcthepond.champs.library.armor.ArmorHandler;
 import com.mcthepond.champs.library.cclass.CClassHandler;
+import com.mcthepond.champs.library.cplayer.CPlayer;
 import com.mcthepond.champs.library.cplayer.CPlayerHandler;
 import com.mcthepond.champs.library.database.DataManager;
 import com.mcthepond.champs.library.event.EventManager;
@@ -32,16 +34,40 @@ import com.mcthepond.champs.library.util.PlatformUtil;
 import com.mcthepond.champs.library.weapon.WeaponCategoryHandler;
 import com.mcthepond.champs.library.weapon.WeaponHandler;
 
+import java.util.List;
+
 /**
  * @author YoshiGenius
  */
 public abstract class ServerBridge {
 
+    private static ServerBridge instance;
+
+    public static ServerBridge getInstance() {
+        return instance;
+    }
+
+    public static void setInstance(ServerBridge instance) {
+        if (instance == null || ServerBridge.instance != null) return;
+        ServerBridge.instance = instance;
+    }
+
+    private final String name;
+
+    public ServerBridge(String name) {
+        init();
+        this.name = name;
+    }
+
+    public String getServerName() {
+        return name;
+    }
+
     public abstract String getServerVersion();
 
-    public abstract String getCoreVersion();
+    public abstract String getChampsCoreVersion();
 
-    public abstract String getLibVersion();
+    public abstract String getChampsLibVersion();
 
     public abstract PlatformUtil.PlatformType getServerPlatform();
 
@@ -58,6 +84,24 @@ public abstract class ServerBridge {
     public abstract void registerPermissions();
 
     public abstract void registerCommands();
+
+    public abstract CPlayer[] getOnlineCPlayers();
+
+    public abstract int getMaxCPlayers();
+
+    public abstract CPlayer getCPlayer(String name);
+
+    public abstract CPlayer getCPlayerExact(String name);
+
+    public abstract List<CPlayer> matchCPlayer(String name);
+
+    public abstract CWorld getCWorld(String name);
+
+    public abstract List<CWorld> getCWorlds();
+
+    public abstract void broadcastMessage(String message);
+
+    public abstract void broadcast(String message, String permission);
 
     protected void init() {
         initDataManagement();

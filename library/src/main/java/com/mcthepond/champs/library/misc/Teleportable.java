@@ -17,6 +17,8 @@
 
 package com.mcthepond.champs.library.misc;
 
+import com.mcthepond.champs.library.CLocation;
+
 /**
  * @author YoshiGenius
  * @date 15/05/13
@@ -25,5 +27,6 @@ package com.mcthepond.champs.library.misc;
 public interface Teleportable {
 
     public void teleport(CLocatable one, CLocatable two);
+    public void teleport(CLocatable one, CLocation two);
 
 }

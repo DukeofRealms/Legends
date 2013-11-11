@@ -18,10 +18,10 @@ public class BukkitCommandHandler implements CommandExecutor {
     private CPlayerHandler playerHandler = CPlayerHandler.getInstance();
 
     @Override
-    public boolean onCommand(CommandSender commandSender, Command command, String s, String[] args) {
-        if(!(commandSender instanceof Player)) return false;
-        CPlayer player = playerHandler.get(commandSender.getName());
-        CommandResult result = CommandHandler.exec(player, command.getName(), args);
+    public boolean onCommand(CommandSender cs, Command cmd, String lbl, String[] arg) {
+        if(!(cs instanceof Player)) return false;
+        CPlayer player = playerHandler.get(cs.getName());
+        CommandResult result = CommandHandler.exec(player, lbl, arg);
         switch(result) {
             case FAILURE:
                 return false;
@@ -31,11 +31,11 @@ public class BukkitCommandHandler implements CommandExecutor {
                 player.sendMessage(ChatColor.RED + "Sorry, you don't have permission to use that command.");
                 return false;
             case BAD_ARG:
-                SubCommand cmd = CommandHandler.getSubCommand(command.getName());
-                if(cmd == null) {
+                SubCommand sub = CommandHandler.getSubCommand(arg[0]);
+                if(sub == null) {
                     player.sendMessage(ChatColor.RED + "Invalid command.");
                 } else {
-                    player.sendMessage(cmd.getHelpText());
+                    player.sendMessage(sub.getHelpText());
                 }
                 return false;
             default:
