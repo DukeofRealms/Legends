@@ -27,6 +27,7 @@ import com.mcthepond.champs.library.behavior.Behavioral;
 import com.mcthepond.champs.library.level.exp.Exp;
 import com.mcthepond.champs.library.level.exp.ExpGroup;
 import com.mcthepond.champs.library.level.exp.sources.ExpSource;
+import com.mcthepond.champs.library.level.exp.sources.ModuleExpSource;
 import com.mcthepond.champs.library.misc.Identifiable;
 import com.mcthepond.champs.library.misc.Informative;
 import com.mcthepond.champs.library.restriction.Restrictable;
@@ -82,6 +83,9 @@ public class CClass implements Informative<CClass, CClassAttributes>, Identifiab
      * @return
      */
     public Exp getExpGain(ExpSource source) {
+        if (source instanceof ModuleExpSource) {
+            return ((ModuleExpSource) source).getExp();
+        }
         Exp exp = new Exp();
         for(Map.Entry<ExpGroup, Double> entry : expGroups.entrySet()) {
             exp.addExp(entry.getKey().getExp(source).getExp() * entry.getValue());

@@ -17,7 +17,9 @@
 package com.mcthepond.champs.library.party;
 
 import com.mcthepond.champs.library.cplayer.CPlayer;
+import com.mcthepond.champs.library.level.exp.Exp;
 import com.mcthepond.champs.library.level.exp.sources.ExpSource;
+import com.mcthepond.champs.library.level.exp.sources.ModuleExpSource;
 
 import java.util.ArrayList;
 
@@ -61,7 +63,12 @@ public class Party {
     }
 
     public Party addExp(double exp) {
-        //addExp(new Exp(exp));
+        addExp(new ModuleExpSource(exp));
+        return this;
+    }
+
+    public Party addExp(Exp exp) {
+        addExp(new ModuleExpSource(exp));
         return this;
     }
 

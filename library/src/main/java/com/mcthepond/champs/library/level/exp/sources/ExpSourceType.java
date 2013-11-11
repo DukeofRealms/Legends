@@ -21,5 +21,5 @@ package com.mcthepond.champs.library.level.exp.sources;
  */
 public enum ExpSourceType {
     BLOCK_BREAK, BLOCK_PLACE, PLAYER_KILL,
-    MOB_KILL, ENCHANT, CRAFT, SKILL
+    MOB_KILL, ENCHANT, CRAFT, SKILL, PLUGIN
 }
