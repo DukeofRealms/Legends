@@ -1,4 +1,4 @@
-Champions Core
+Champs Core
 ====
 
 ##Pull Requests
@@ -10,12 +10,11 @@ Our current policy on pull requests is as follows:
 4. Each new individual feature should be squashed into a single commit, so we can easily rollback code that causes errors
 
 ##Documentation
-See the javadocs at [Champions JavaDocs](http://jd.yoshigenius.com/apidocs/champions/) [Champions DoxyGen](http://jd.yoshigenius.com/doxygen/champions/)
-and the usage docs at the wiki: [Champions Wiki](https://github.com/ChampionsDev/Champions/wiki)
+See the javadocs at [Champs JavaDocs](http://jd.yoshigenius.com/apidocs/champs/) or [Champs DoxyGen](http://jd.yoshigenius.com/doxygen/champs/)
+and the usage docs at the wiki: [Champs Wiki](https://github.com/ThePondMC/Champs/wiki)
 
 Note: The links above may change at any time, but forwards will hopefully be set up.
 
 ##Donations
 You can donate to the developers using their separate links:
 [YoshiGenius](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DFWFE3NDR9LC8)
-[B2OJustin] (https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MVNXP74AYPCYJ)
