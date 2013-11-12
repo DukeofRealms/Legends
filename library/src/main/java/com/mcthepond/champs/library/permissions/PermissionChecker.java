@@ -17,11 +17,11 @@
 
 package com.mcthepond.champs.library.permissions;
 
-import com.mcthepond.champs.library.cplayer.CPlayer;
+import com.mcthepond.champs.library.commands.CommandSender;
 
 /**
  * @author B2OJustin
  */
 public interface PermissionChecker {
-    public boolean hasPermission(CPlayer cPlayer, String permission);
+    public boolean hasPermission(CommandSender cPlayer, String permission);
 }

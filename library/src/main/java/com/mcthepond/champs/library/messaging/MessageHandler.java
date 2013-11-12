@@ -17,6 +17,7 @@
 
 package com.mcthepond.champs.library.messaging;
 
+import com.mcthepond.champs.library.commands.CommandSender;
 import com.mcthepond.champs.library.cplayer.CPlayer;
 
 import java.util.ArrayList;
@@ -36,11 +37,11 @@ public abstract class MessageHandler {
         return messengers.remove(sender);
     }
 
-    public static boolean sendMessage(CPlayer cPlayer, String message) {
+    public static boolean sendMessage(CommandSender sender, String message) {
         if (messengers.isEmpty()) return false;
         boolean handled = false;
         for (Messenger m : messengers) {
-            if(m.send(cPlayer, message)) handled = true;
+            if(m.send(sender, message)) handled = true;
         }
         return handled;
     }

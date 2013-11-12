@@ -17,7 +17,7 @@
 
 package com.mcthepond.champs.library.permissions;
 
-import com.mcthepond.champs.library.cplayer.CPlayer;
+import com.mcthepond.champs.library.commands.CommandSender;
 
 import java.util.ArrayList;
 
@@ -32,10 +32,10 @@ public abstract class PermissionHandler {
         return permissionCheckers.add(checker);
     }
 
-    public static boolean hasPermission(CPlayer cPlayer, String permission) {
+    public static boolean hasPermission(CommandSender sender, String permission) {
         if (permissionCheckers.isEmpty()) return false;
         for (PermissionChecker pc : permissionCheckers) {
-            if (pc.hasPermission(cPlayer, permission)) return true;
+            if (sender.hasPermission(permission) || pc.hasPermission(sender, permission)) return true;
         }
         return false;
     }

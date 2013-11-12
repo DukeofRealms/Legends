@@ -17,6 +17,9 @@
 
 package com.mcthepond.champs.bukkit.core;
 
+import com.mcthepond.champs.library.commands.CommandSender;
+import com.mcthepond.champs.library.commands.ConsoleCommandSender;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.mcthepond.champs.library.cplayer.CPlayer;
@@ -33,8 +36,12 @@ public class BukkitMessenger implements Messenger {
     }
 
     @Override
-    public boolean send(CPlayer cPlayer, String message) {
-        plugin.getServer().getPlayerExact(cPlayer.getName()).sendMessage(message);
+    public boolean send(CommandSender sender, String message) {
+        if (sender instanceof ConsoleCommandSender) {
+            Bukkit.getConsoleSender().sendMessage(message);
+            return true;
+        }
+        plugin.getServer().getPlayerExact(sender.getName()).sendMessage(message);
         return true;
     }
 

@@ -30,6 +30,7 @@ import com.mcthepond.champs.library.behavior.Behavioral;
 import com.mcthepond.champs.library.cclass.CClass;
 import com.mcthepond.champs.library.cclass.CClassAttributes;
 import com.mcthepond.champs.library.cclass.CClassRestricted;
+import com.mcthepond.champs.library.commands.CommandSender;
 import com.mcthepond.champs.library.level.Level;
 import com.mcthepond.champs.library.level.LevelRestricted;
 import com.mcthepond.champs.library.level.exp.Exp;
@@ -55,7 +56,7 @@ import java.util.LinkedHashMap;
  * Represents a player.
  * @author B2OJustin
  */
-public class CPlayer implements CEntity, Behavioral<CPlayer>,
+public class CPlayer implements CommandSender, CEntity, Behavioral<CPlayer>,
         Informative<CPlayer, CPlayerAttributes>,
         WeaponUser<CPlayer>, ArmorUser<CPlayer>, SkillUser<CPlayer>,
         WeaponRestricted, ArmorRestricted, SkillRestricted, LevelRestricted, CClassRestricted, RaceRestricted, CLocatable {

@@ -42,11 +42,15 @@ public abstract class SubCommand {
 
     public abstract String getHelpText();
 
-    public abstract boolean exec(CPlayer sender, String[] args);
+    public abstract boolean exec(CommandSender sender, String[] args);
 
-    public boolean hasPermission(CPlayer sender) {
+    public boolean hasPermission(CommandSender sender) {
         String permission = "champions.cmd." + getFirstArg();
         return PermissionHandler.hasPermission(sender, permission);
     }
+
+    public abstract boolean consoleCanExec();
+
+    public abstract boolean playerCanExec();
 
 }

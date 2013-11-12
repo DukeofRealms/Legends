@@ -17,11 +17,12 @@
 
 package com.mcthepond.champs.library.messaging;
 
+import com.mcthepond.champs.library.commands.CommandSender;
 import com.mcthepond.champs.library.cplayer.CPlayer;
 
 /**
  * @author B2OJustin
  */
 public interface Messenger {
-    public boolean send(CPlayer cPlayer, String message);
+    public boolean send(CommandSender cPlayer, String message);
 }

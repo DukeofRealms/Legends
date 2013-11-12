@@ -18,6 +18,7 @@ package com.mcthepond.champs.bukkit.core.listeners;
 
 import com.mcthepond.champs.library.event.CEventHandler;
 import com.mcthepond.champs.library.event.EventListener;
+import com.mcthepond.champs.library.event.EventPriority;
 import com.mcthepond.champs.library.event.cplayer.CPlayerExpGainEvent;
 import com.mcthepond.champs.library.event.cplayer.CPlayerLevelUpEvent;
 import org.bukkit.Bukkit;
@@ -28,14 +29,14 @@ import org.bukkit.entity.Player;
  */
 public class BasicListener implements EventListener {
 
-    @CEventHandler
+    @CEventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
     public void onCPlayerExpGain(CPlayerExpGainEvent event) {
         Player player = Bukkit.getPlayerExact(event.getCPlayer().getName());
         player.sendMessage(String.format("Gained %f experience.", event.getExp().getExp()));
         player.sendMessage(String.format("You have %f experience.", event.getCPlayer().getPrimaryClassAttributes().getLevel().getExp()));
     }
 
-    @CEventHandler
+    @CEventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
     public void onCPlayerLevelUp(CPlayerLevelUpEvent event) {
         Player player = Bukkit.getPlayerExact(event.getCPlayer().getName());
         player.sendMessage(String.format("You have advanced to level %d", event.getCPlayer().getPrimaryClassAttributes().getLevel().getLevel()));
