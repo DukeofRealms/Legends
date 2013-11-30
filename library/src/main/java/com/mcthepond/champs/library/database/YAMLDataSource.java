@@ -23,11 +23,11 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.logging.Logger;
 
+import com.mcthepond.champs.library.configuration.ChampsConfiguration;
 import org.yaml.snakeyaml.Yaml;
 
 import com.mcthepond.champs.library.BasicAttributes;
 import com.mcthepond.champs.library.BasicCategory;
-import com.mcthepond.champs.library.Configuration;
 import com.mcthepond.champs.library.StatsInfo;
 import com.mcthepond.champs.library.armor.Armor;
 import com.mcthepond.champs.library.armor.ArmorHandler;
@@ -51,7 +51,6 @@ import com.mcthepond.champs.library.level.exp.sources.ExpSourceType;
 import com.mcthepond.champs.library.level.exp.sources.MobKillExpSource;
 import com.mcthepond.champs.library.level.exp.sources.PlayerKillExpSource;
 import com.mcthepond.champs.library.level.exp.sources.SkillUseExpSource;
-import com.mcthepond.champs.library.party.Party;
 import com.mcthepond.champs.library.race.Race;
 import com.mcthepond.champs.library.race.RaceHandler;
 import com.mcthepond.champs.library.restriction.BasicRestrictions;
@@ -228,7 +227,7 @@ public class YAMLDataSource implements DataSource {
     }
 
     @Override
-    public synchronized CClass loadLClass(String id) {
+    public synchronized CClass loadCClass(String id) {
         String filePath = configPath + CLASS_PATH + id.replace(" ", "_") + ".yml";
         CClass cClass;
         try {
@@ -368,11 +367,6 @@ public class YAMLDataSource implements DataSource {
     }
 
     @Override
-    public Party loadParty(String name) {
-        return null;  // TODO
-    }
-
-    @Override
     public synchronized ExpGroup loadExpGroup(String id) {
         String filePath = configPath + EXP_PATH + id.replace(" ", "_") + ".yml";
         try {
@@ -427,7 +421,7 @@ public class YAMLDataSource implements DataSource {
         return null;
     }
 
-    public synchronized void loadConfiguration(Configuration config, String file) throws FileNotFoundException {
+    public synchronized void loadConfiguration(ChampsConfiguration config, String file) throws FileNotFoundException {
         YAMLHelper yml = new YAMLHelper(configPath + file);
 
         // Main configuration

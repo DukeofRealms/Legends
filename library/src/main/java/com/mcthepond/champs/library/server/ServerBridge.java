@@ -18,7 +18,7 @@
 package com.mcthepond.champs.library.server;
 
 import com.mcthepond.champs.library.CWorld;
-import com.mcthepond.champs.library.Configuration;
+import com.mcthepond.champs.library.configuration.ChampsConfiguration;
 import com.mcthepond.champs.library.armor.ArmorCategoryHandler;
 import com.mcthepond.champs.library.armor.ArmorHandler;
 import com.mcthepond.champs.library.cclass.CClassHandler;
@@ -113,7 +113,7 @@ public abstract class ServerBridge {
     }
 
     protected void initDataManagement() {
-        DataManager.init(Configuration.getInstance());
+        DataManager.init(ChampsConfiguration.getInstance());
     }
 
     public EventManager getEventManager() {

@@ -17,7 +17,7 @@
 package com.mcthepond.champs.library.cplayer;
 
 import com.mcthepond.champs.library.BasicHandler;
-import com.mcthepond.champs.library.Configuration;
+import com.mcthepond.champs.library.configuration.ChampsConfiguration;
 import com.mcthepond.champs.library.cclass.CClassHandler;
 import com.mcthepond.champs.library.database.DataManager;
 import com.mcthepond.champs.library.race.RaceHandler;
@@ -58,7 +58,7 @@ public class CPlayerHandler extends BasicHandler<CPlayer> {
 
         // Create new player data
         if(lPlayer == null) {
-            Configuration config = Configuration.getInstance();
+            ChampsConfiguration config = ChampsConfiguration.getInstance();
             lPlayer = new CPlayer(
                     RaceHandler.getInstance().load(config.getDefaultRace()),
                     CClassHandler.getInstance().load(config.getDefaultPrimaryClass()),

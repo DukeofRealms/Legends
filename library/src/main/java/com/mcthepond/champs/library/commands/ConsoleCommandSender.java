@@ -1,7 +1,6 @@
 package com.mcthepond.champs.library.commands;
 
 import com.mcthepond.champs.library.messaging.MessageHandler;
-import com.mcthepond.champs.library.messaging.Messenger;
 
 /**
  * @author YoshiGenius
@@ -23,8 +22,9 @@ public class ConsoleCommandSender implements CommandSender {
     }
 
     @Override
-    public void sendMessage(String message) {
+    public boolean sendMessage(String message) {
         MessageHandler.sendMessage(this, message);
+        return false;
     }
 
 }

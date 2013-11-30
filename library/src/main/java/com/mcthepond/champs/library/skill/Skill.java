@@ -23,6 +23,7 @@ import com.mcthepond.champs.library.misc.Informative;
 import com.mcthepond.champs.library.restriction.Restrictable;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author B2OJustin
@@ -58,7 +59,7 @@ public class Skill implements Informative<Skill, SkillAttributes>, Behavioral<Sk
         return this.description;
     }
 
-    public Skill setDescription(ArrayList<String> description) {
+    public Skill setDescription(List<String> description) {
         this.description = description;
         return this;
     }

@@ -38,11 +38,10 @@ public interface DataSource {
     public CPlayer loadLPlayer(String name);
     public void saveLPlayer(CPlayer lPlayer);
     public Race loadRace(String name);
-    public CClass loadLClass(String name);
+    public CClass loadCClass(String name);
     public Skill loadSkill(String name);
     public Weapon loadWeapon(String name);
     public BasicCategory<WeaponAttributes> loadWeaponCategory(String name);
-    public Party loadParty(String name);
 
     public ExpGroup loadExpGroup(String name);
 }

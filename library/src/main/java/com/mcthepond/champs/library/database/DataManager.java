@@ -17,7 +17,7 @@
 
 package com.mcthepond.champs.library.database;
 
-import com.mcthepond.champs.library.Configuration;
+import com.mcthepond.champs.library.configuration.ChampsConfiguration;
 
 import java.util.HashMap;
 
@@ -51,25 +51,31 @@ public class DataManager {
      * @param dataSource
      */
     public static void setDataSource(DataSource dataSource) {
-        if(!dataSources.containsKey(dataSource.getName())) {
-            dataSources.put(dataSource.getName(), dataSource);
-        }
+        registerDataSource(dataSource);
         DataManager.dataSource = dataSource;
     }
 
     public static void registerDataSource(DataSource dataSource) {
-        dataSources.put(dataSource.getName(), dataSource);
+        if (dataSources.containsKey(dataSource.getName())) {
+            dataSources.put(dataSource.getName(), dataSource);
+        }
     }
 
     /**
-     * Initializes the DataManager using the Configuration instance.
+     * Initializes the DataManager using the ChampsConfiguration instance.
      *
-     * @param config Configuration to retrieve database settings.
+     * @param config ChampsConfiguration to retrieve database settings.
      */
-    public static void init(Configuration config) {
+    public static void init(ChampsConfiguration config) {
         switch(config.getDatabaseType().toUpperCase()) {
             case "YAML":
                 setDataSource(new YAMLDataSource(config.getYamlConfigPath()));
+                break;
+            case "MySQL":
+                setDataSource(new SQLDataSource(SQLDataSource.SQLDatabaseType.MYSQL));
+                break;
+            case "SQLite":
+                setDataSource(new SQLDataSource(SQLDataSource.SQLDatabaseType.SQLITE));
                 break;
         }
     }

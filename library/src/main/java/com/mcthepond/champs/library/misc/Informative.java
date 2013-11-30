@@ -17,15 +17,16 @@
 package com.mcthepond.champs.library.misc;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author B2OJustin
  */
 public interface Informative<SelfType, InfoType> {
-    public ArrayList<String> getDescription();
+    public List<String> getDescription();
     public String getName();
     public SelfType setName(String name);
-    public SelfType setDescription(ArrayList<String> description);
+    public SelfType setDescription(List<String> description);
     public InfoType getAttributes();
     public SelfType setAttributes(InfoType attributes);
 }

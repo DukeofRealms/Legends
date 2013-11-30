@@ -9,5 +9,5 @@ public interface CommandSender {
 
     public String getName();
 
-    public void sendMessage(String s);
+    public boolean sendMessage(String message);
 }

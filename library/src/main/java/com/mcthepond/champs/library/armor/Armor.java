@@ -24,6 +24,7 @@ import com.mcthepond.champs.library.misc.Informative;
 import com.mcthepond.champs.library.restriction.Restrictable;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Represents a player Armor object.
@@ -44,7 +45,7 @@ public class Armor implements Informative<Armor, ArmorAttributes>, Behavioral<Ar
         return this;
     }
 
-    public Armor setDescription(ArrayList<String> description) {
+    public Armor setDescription(List<String> description) {
         this.description = description;
         return this;
     }

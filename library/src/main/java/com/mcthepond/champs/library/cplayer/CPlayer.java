@@ -51,6 +51,7 @@ import com.mcthepond.champs.library.weapon.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.List;
 
 /**
  * Represents a player.
@@ -70,7 +71,7 @@ public class CPlayer implements CommandSender, CEntity, Behavioral<CPlayer>,
     private CClassAttributes secondaryClassInfo = new CClassAttributes();
 
     private String playerName = "";
-    private ArrayList<String> description = new ArrayList<>();
+    private List<String> description = new ArrayList<>();
 
     private CPlayerAttributes fullAttributes = new CPlayerAttributes();
     private CPlayerAttributes playerBonusAttributes = new CPlayerAttributes();
@@ -491,7 +492,7 @@ public class CPlayer implements CommandSender, CEntity, Behavioral<CPlayer>,
     }
 
     @Override
-    public ArrayList<String> getDescription() {
+    public List<String> getDescription() {
         return description;
     }
 
@@ -507,7 +508,7 @@ public class CPlayer implements CommandSender, CEntity, Behavioral<CPlayer>,
     }
 
     @Override
-    public CPlayer setDescription(ArrayList<String> description) {
+    public CPlayer setDescription(List<String> description) {
         this.description = description;
         return this;
     }

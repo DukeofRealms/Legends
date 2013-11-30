@@ -3,12 +3,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.github.championsdev</groupId>
-        <artifactId>champions</artifactId>
+        <groupId>com.mcthepond</groupId>
+        <artifactId>champs</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <artifactId>champions-bukkit</artifactId>
+    <artifactId>champs-bukkit</artifactId>
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -27,8 +27,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.github.championsdev.champions</groupId>
-            <artifactId>champions-lib</artifactId>
+            <groupId>com.mcthepond</groupId>
+            <artifactId>champs-lib</artifactId>
             <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>

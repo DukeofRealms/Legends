@@ -24,6 +24,7 @@ import com.mcthepond.champs.library.misc.Informative;
 import com.mcthepond.champs.library.restriction.Restrictable;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author B2OJustin
@@ -67,7 +68,7 @@ public class Weapon implements Informative<Weapon, WeaponAttributes>, Behavioral
     }
 
     @Override
-    public Weapon setDescription(ArrayList<String> description) {
+    public Weapon setDescription(List<String> description) {
         this.description = description;
         return this;
     }

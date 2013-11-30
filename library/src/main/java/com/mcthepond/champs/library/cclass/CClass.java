@@ -37,10 +37,7 @@ import com.mcthepond.champs.library.skill.SkillRestricted;
 import com.mcthepond.champs.library.skill.SkillUser;
 import com.mcthepond.champs.library.weapon.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author YoshiGenius
@@ -143,7 +140,7 @@ public class CClass implements Informative<CClass, CClassAttributes>, Identifiab
     }
 
     @Override
-    public CClass setDescription(ArrayList<String> description) {
+    public CClass setDescription(List<String> description) {
         this.description = description;
         return this;
     }

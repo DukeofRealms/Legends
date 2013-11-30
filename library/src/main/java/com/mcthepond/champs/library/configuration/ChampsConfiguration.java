@@ -14,14 +14,15 @@
  *     You should have received a copy of the GNU General Public License
  *     along with Champions.  If not, see <http://www.gnu.org/licenses/>.
  ******************************************************************************/
-package com.mcthepond.champs.library;
+package com.mcthepond.champs.library.configuration;
+
+import com.mcthepond.champs.library.configuration.file.YamlConfiguration;
 
 /**
  * @author B2OJustin
  */
-public class Configuration {
+public class ChampsConfiguration {
     private String databaseType = "YAML";
-    //YAML
     private String yamlConfigPath = "";
 
     private String defaultRace = "Default";
@@ -29,15 +30,17 @@ public class Configuration {
     private String defaultSecondaryClass = "Default";
     private String expCurve = "L * 200";
 
-    public static Configuration instance = new Configuration();
+    public static ChampsConfiguration instance = new ChampsConfiguration();
 
-    public static Configuration getInstance() {
+    public static ChampsConfiguration getInstance() {
         return instance;
     }
 
-    private Configuration() {
-    }
+    private ChampsConfiguration() {}
 
+    public static BaseConfiguration getBaseConfiguration() {
+        return BaseConfiguration.getInstance();
+    }
 
     public String getDatabaseType() {
         return databaseType;

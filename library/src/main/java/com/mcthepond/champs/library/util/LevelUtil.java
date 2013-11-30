@@ -23,7 +23,7 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 
-import com.mcthepond.champs.library.Configuration;
+import com.mcthepond.champs.library.configuration.ChampsConfiguration;
 import com.mcthepond.champs.library.cclass.CClassType;
 import com.mcthepond.champs.library.cplayer.CPlayer;
 import com.mcthepond.champs.library.level.Level;
@@ -34,7 +34,7 @@ import com.mcthepond.champs.library.level.Level;
 public class LevelUtil {
     private static Logger logger = Logger.getLogger(LevelUtil.class.getName());
     private static HashMap<Integer, Double> reqExpMap = new HashMap<>();
-    private static String expCurve = Configuration.getInstance().getExpCurve();
+    private static String expCurve = ChampsConfiguration.getInstance().getExpCurve();
     private static ScriptEngine engine = new ScriptEngineManager().getEngineByName("JavaScript");
 
     private LevelUtil() {

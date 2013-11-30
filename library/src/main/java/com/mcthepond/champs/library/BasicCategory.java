@@ -23,6 +23,7 @@ import com.mcthepond.champs.library.misc.Informative;
 import com.mcthepond.champs.library.restriction.Restrictable;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author B2OJustin
@@ -65,7 +66,7 @@ public class BasicCategory<AttributeType extends Attributes> implements
     }
 
     @Override
-    public BasicCategory setDescription(ArrayList<String> description) {
+    public BasicCategory setDescription(List<String> description) {
         this.description = description;
         return (BasicCategory)this;
     }

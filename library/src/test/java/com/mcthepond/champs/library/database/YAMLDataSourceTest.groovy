@@ -16,7 +16,7 @@
  ******************************************************************************/
 package com.mcthepond.champs.library.database
 
-import com.mcthepond.champs.library.Configuration
+import com.mcthepond.champs.library.configuration.ChampsConfiguration
 import com.mcthepond.champs.library.cclass.CClass
 import com.mcthepond.champs.library.cclass.CClassHandler
 import com.mcthepond.champs.library.cplayer.CPlayer
@@ -43,9 +43,9 @@ class YAMLDataSourceTest extends GroovyTestCase {
     void setUp() {
         yamlDataSource = new YAMLDataSource("../core-bukkit/src/main/resources/resources/");
         weaponHandler = WeaponHandler.getInstance();
-        yamlDataSource.loadConfiguration(Configuration.getInstance(), "config.yml");
-        Configuration.getInstance().setYamlConfigPath("../core-bukkit/src/main/resources/resources/")
-        DataManager.init(Configuration.getInstance());
+        yamlDataSource.loadConfiguration(ChampsConfiguration.getInstance(), "config.yml");
+        ChampsConfiguration.getInstance().setYamlConfigPath("../core-bukkit/src/main/resources/resources/")
+        DataManager.init(ChampsConfiguration.getInstance());
         raceHandler = RaceHandler.getInstance();
         lClassHandler = CClassHandler.getInstance();
         restrictionHandler = RestrictionHandler.getInstance();
@@ -78,7 +78,7 @@ class YAMLDataSourceTest extends GroovyTestCase {
     }
 
     void testLoadConfiguration() {
-        Configuration config = Configuration.getInstance();
+        ChampsConfiguration config = ChampsConfiguration.getInstance();
         yamlDataSource.loadConfiguration(config, "config.yml");
         assertEquals(config.getYamlConfigPath(), "Champions/");
     }

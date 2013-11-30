@@ -7,7 +7,7 @@ import com.mcthepond.champs.bukkit.core.utils.LocationUtil;
 import com.mcthepond.champs.library.CBlock;
 import com.mcthepond.champs.library.CLocation;
 import com.mcthepond.champs.library.CWorld;
-import com.mcthepond.champs.library.Configuration;
+import com.mcthepond.champs.library.configuration.ChampsConfiguration;
 import com.mcthepond.champs.library.cplayer.CPlayer;
 import com.mcthepond.champs.library.cplayer.CPlayerHandler;
 import com.mcthepond.champs.library.database.YAMLDataSource;
@@ -202,7 +202,7 @@ public class BukkitChampsServer extends ServerBridge {
 
             // Load configuration
             YAMLDataSource yamlDataSource = new YAMLDataSource(CONFIG_PATH);
-            yamlDataSource.loadConfiguration(Configuration.getInstance(), MAIN_CONFIG_FILE);
+            yamlDataSource.loadConfiguration(ChampsConfiguration.getInstance(), MAIN_CONFIG_FILE);
         } catch (IOException e) {
             logger.severe("Could not write default configuration files to disk.");
         }

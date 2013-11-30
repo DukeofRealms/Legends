@@ -37,6 +37,7 @@ import com.mcthepond.champs.library.weapon.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * @author B2OJustin
@@ -71,7 +72,7 @@ public class Race implements Informative<Race, RaceAttributes>, Identifiable<Rac
         return this;
     }
 
-    public Race setDescription(ArrayList<String> description) {
+    public Race setDescription(List<String> description) {
         this.description = description;
         return this;
     }
