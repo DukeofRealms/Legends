@@ -1,4 +1,4 @@
-Champs Core
+Legends Core
 ====
 
 ##Pull Requests
