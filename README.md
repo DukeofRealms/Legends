@@ -13,7 +13,3 @@ Our current policy on pull requests is as follows:
 See the javadocs at [Champs JavaDocs](http://champs.dawnfirerealms.net/apidocs/champions/index.html)
 
 Note: The links above may change at any time, but forwards will hopefully be set up.
-
-##Donations
-You can donate to the developers using their separate links:
-[YoshiGenius](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DFWFE3NDR9LC8)
